@@ -2,42 +2,32 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-@media(max-width:768px){
-  .header{
-    height: 32px;
-    a.logo{
-      position: absolute;
-      left: 50%;
-      margin-left: -16px;
-    }
-  }
-}
+
 
 body {
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif
 }
 
-.header-container{
-  padding: 0 15px;
+.header-container {
   border-bottom: 1px solid #e8e8e8;
   width: 100%;
   background-color: #fff;
   box-sizing: border-box;
 }
 
-.header{
+.header {
   display: block;
-  padding: 15px 0;
+  padding: 15px 15px;
   height: 100%;
   max-width: 1100px;
   margin: 0 auto;
   height: 32px;
-  a.logo{
+  a.logo {
     display: inline-block;
     height: 32px;
     float:left;
   }
-  .logo svg{
+  .logo svg {
     height: 32px;
     width: 32px;
   }
@@ -63,8 +53,12 @@ body {
 .content {
   max-width: 1100px;
   margin: 0 auto;
+  overflow:hidden;
   .topics {
+    float:left;
     padding-right: 20px;
+    width: 210px;
+    height: 100vh;
     h4 {
       display: inline-block;
       text-transform: uppercase;
@@ -73,6 +67,183 @@ body {
       line-height: 16px;
       color: #999;
       margin-bottom: 10px;
+      margin-top: 0;
+    }
+    ul{
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      li {
+        width: 100%;
+      }
+    }
+    a.category {
+      display:flex;
+      padding: 4px;
+      margin-bottom: 4px;
+      border-radius: 3px;
+      box-sizing: border-box;
+      border: 1px solid transparent;
+      width: 100%;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 18px;
+      color: black;
+      -webkit-box-align: center;
+      align-items: center;
+      &:hover {
+        background-color: #fafafa;
+        border: 1px solid #e8e8e8;
+        box-sizing:border-box;
+      }
+      &:active {
+        background-color: #fff;
+        border: 1px solid #e8e8e8;
+      }
+      .thumbnail {
+        display: inline-block;
+        height: 24px;
+        width: 24px;
+        margin-right: 10px;
+        background-color: #e8e8e8;
+        border-radius: 1px;
+      }
+      .name {
+        margin: 0;
+        display:block;
+      }
+    }
+  }
+
+  .products-list {
+    display:block;
+    overflow:hidden;
+    flex-grow: 1;
+    border: 1px solid #e8e8e8;
+    border-radius: 3px;
+    background-color: white;
+    h2 {
+      margin: 0 20px;
+      padding: 15px 0;
+      font-size: 20px;
+      font-weight: 300;
+      letter-spacing: .4px;
+      line-height: 20px;
+      border-bottom: 1px solid #e8e8e8;
+    }
+    ul{
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      li {
+        overflow: hidden;
+        position: relative;
+      }
+    }
+    .thumbnail {
+      display: block;
+      float:left;
+      height: 80px;
+      width: 80px;
+      margin-right: 15px;
+      background: #e8e8e8;
+    }
+    a.card {
+      text-decoration: none;
+      float:left;
+      padding: 15px;
+      border-bottom: 1px solid #e8e8e8;
+      overflow:hidden;
+      width: 100%;
+      &:hover {
+        background-color: #f9f9f9;
+      }
+      .title {
+        text-decoration: none;
+        color: #000;
+        font-size: 20px;
+        font-weight: 300;
+        letter-spacing: .4px;
+        line-height: 24px;
+        margin: 0;
+      }
+      .tagline {
+        text-decoration: none;
+        color: #999;
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 18px;
+        margin: 5px 0;
+      }
+    }
+    .product-actions {
+      left: 110px;
+      bottom: 15px;
+      right: 15px;
+      display: inline-flex;
+      position: absolute;
+      .action{
+        padding: 3px 5px 0 5px;
+        background: #f8f8f8;
+        border-radius: 3px;
+        border: 1px solid #e8e8e8;
+        box-sizing: border-box;
+        height: 24px;
+        display: inline-flex;
+        justify-content: center;
+        align-content: center;
+        cursor: pointer;
+        overflow: hidden;
+        white-space: nowrap;
+        color: #999;
+        font-size: 11px;
+        font-weight: 400;
+        letter-spacing: .3px;
+        line-height: 16px;
+        text-transform: uppercase;
+      }
+      .upvote {
+        @extend .action;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        .arrow {
+          background-image: url(https://s3.producthunt.com/static/upvote-burst-white.png);
+          background-repeat: no-repeat;
+          background-size: 351px 15px;
+          height: 15px;
+          width: 15px;
+        }
+      }
+
+    }
+  }
+}
+
+@media(max-width:768px) {
+  .header {
+    height: 32px;
+    a.logo {
+      position: absolute;
+      left: 50%;
+      margin-left: -16px;
+    }
+  }
+  .content-container {
+    padding: 0;
+  }
+  .topics {
+    display: none;
+  }
+  .products-list{
+    h2 {
+      margin-left: 5px;
+    }
+    .card {
+      margin-left: 5px;
+      margin-right: 5px;
+      box-sizing: border-box;
     }
   }
 }
