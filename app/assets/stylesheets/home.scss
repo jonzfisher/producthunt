@@ -208,12 +208,18 @@ body {
         position: absolute;
         bottom: 0;
         right: 0;
+        input {
+          display: none;
+        }
         .arrow {
           background-image: url(https://s3.producthunt.com/static/upvote-burst-white.png);
           background-repeat: no-repeat;
           background-size: 351px 15px;
           height: 15px;
           width: 15px;
+        }
+        &:hover {
+          background-color: #e8e8e8;
         }
       }
 

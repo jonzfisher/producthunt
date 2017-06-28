@@ -33,10 +33,11 @@
                   <%= product.categories.first.name %>
                 </div>
               <% end %>
-              <div class="upvote">
+              <label class="upvote" for="upvoted">
+                <input type="checkbox" id="upvoted" />
                 <div class="arrow"></div>
                 <span class="upvote-count">313</span>
-              </div>
+              </label>
             </div>
           </li>
         <% end %>
