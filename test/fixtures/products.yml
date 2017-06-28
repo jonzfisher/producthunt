@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 
+  title: MyString
+  tagline: MyString
+  category_id: 
+  upvotes: 
+
+two:
+  id: 
+  title: MyString
+  tagline: MyString
+  category_id: 
+  upvotes: 
