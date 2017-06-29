@@ -3,11 +3,13 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $(document).on 'turbolinks:load', ->
-  $('.upvote :checkbox').change ->
-    upvoteCount = $(this).parent().children('.upvote-count')
-    if (this.checked)
+  @toggleCheckbox = toggleCheckbox = (element) ->
+    upvoteCount = $("#" + element.id).parent().find('.upvote-count')
+    if (element.checked)
       upvotes = parseInt(upvoteCount.text())
       upvoteCount.text(upvotes+1);
+      $("#" + element.id).parent().addClass("checked")
     else
       upvotes = parseInt(upvoteCount.text())
       upvoteCount.text(upvotes-1);
+      $("#" + element.id).parent().removeClass("checked")
