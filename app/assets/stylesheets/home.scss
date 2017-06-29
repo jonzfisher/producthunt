@@ -58,7 +58,7 @@ body {
     float:left;
     padding-right: 20px;
     width: 210px;
-    height: 100vh;
+    height: auto;
     h4 {
       display: inline-block;
       text-transform: uppercase;
@@ -246,9 +246,12 @@ body {
     padding: 0;
   }
   .topics {
-    display: none;
+    padding: 15px;
+    height: auto;
+    width: 100%;
   }
   .products-list{
+    width: 100%;
     h2 {
       margin-left: 5px;
     }
